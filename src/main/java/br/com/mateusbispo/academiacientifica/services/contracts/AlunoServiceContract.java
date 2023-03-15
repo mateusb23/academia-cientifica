@@ -14,7 +14,7 @@ public interface AlunoServiceContract {
 
     Optional<AlunoDto> findById(UUID id);
 
-    void delete(AlunoDto alunoDto);
+    void delete(UUID id);
 
     Boolean existsByCpf(String cpf);
 

@@ -18,6 +18,7 @@ public class AlunoDto extends RepresentationModel<AlunoDto> implements Serializa
     @Mapping("id")
     private UUID key;
     private String nome;
+    private String cpf;
     private List<Curso> cursos;
 
     public AlunoDto() {
@@ -39,8 +40,20 @@ public class AlunoDto extends RepresentationModel<AlunoDto> implements Serializa
         this.nome = nome;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     public List<Curso> getCursos() {
         return cursos;
+    }
+
+    public void setCursos(List<Curso> cursos) {
+        this.cursos = cursos;
     }
 
     @Override
@@ -49,11 +62,11 @@ public class AlunoDto extends RepresentationModel<AlunoDto> implements Serializa
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         AlunoDto alunoDto = (AlunoDto) o;
-        return Objects.equals(key, alunoDto.key) && Objects.equals(nome, alunoDto.nome) && Objects.equals(cursos, alunoDto.cursos);
+        return Objects.equals(key, alunoDto.key) && Objects.equals(nome, alunoDto.nome) && Objects.equals(cpf, alunoDto.cpf) && Objects.equals(cursos, alunoDto.cursos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), key, nome, cursos);
+        return Objects.hash(super.hashCode(), key, nome, cpf, cursos);
     }
 }
