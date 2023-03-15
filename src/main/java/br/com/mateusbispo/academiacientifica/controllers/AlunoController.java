@@ -17,14 +17,14 @@ public class AlunoController {
     @Autowired
     private AlunoService service;
 
-    @GetMapping(produces = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    @GetMapping(produces = {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public List<AlunoDto> findAll() {
         return service.findAll();
     }
 
     @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping(value = "/{id}",
-            produces = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+            produces = {MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Optional<AlunoDto> findById(@PathVariable(value = "id") UUID id) {
         return service.findById(id);
     }

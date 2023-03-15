@@ -20,7 +20,8 @@ public class AlunoDto extends RepresentationModel<AlunoDto> implements Serializa
     private String nome;
     private List<Curso> cursos;
 
-    public AlunoDto() { }
+    public AlunoDto() {
+    }
 
     public UUID getKey() {
         return key;

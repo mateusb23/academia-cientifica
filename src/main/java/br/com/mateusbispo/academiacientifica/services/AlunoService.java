@@ -8,6 +8,7 @@ import br.com.mateusbispo.academiacientifica.services.contracts.AlunoServiceCont
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import br.com.mateusbispo.academiacientifica.mapper.DozerMapper;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -49,6 +50,9 @@ public class AlunoService implements AlunoServiceContract {
 
     @Override
     public AlunoDto saveAluno(AlunoDto alunoDto) {
+
+        logger.info("Inserting a student in the database!");
+
         return null;
     }
 
