@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -24,7 +25,7 @@ public class AlunoController {
     @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping(value = "/{id}",
             produces = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public AlunoDto findById(@PathVariable(value = "id") UUID id) {
+    public Optional<AlunoDto> findById(@PathVariable(value = "id") UUID id) {
         return service.findById(id);
     }
 }

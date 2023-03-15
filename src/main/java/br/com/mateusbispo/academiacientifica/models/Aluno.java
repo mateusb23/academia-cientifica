@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 @Entity
@@ -53,5 +54,18 @@ public class Aluno implements Serializable {
 
     public void setCursos(List<Curso> cursos) {
         this.cursos = cursos;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Aluno aluno = (Aluno) o;
+        return Objects.equals(id, aluno.id) && Objects.equals(nome, aluno.nome) && Objects.equals(cpf, aluno.cpf) && Objects.equals(cursos, aluno.cursos);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nome, cpf, cursos);
     }
 }

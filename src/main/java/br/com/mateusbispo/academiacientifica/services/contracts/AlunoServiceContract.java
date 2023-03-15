@@ -12,7 +12,7 @@ public interface AlunoServiceContract {
     AlunoDto saveAluno(AlunoDto alunoDto);
     List<AlunoDto> findAll(AlunoDto alunoDto);
     Optional<AlunoDto> findById(UUID id);
-    void delete(AlunoDto aluno);
+    void delete(AlunoDto alunoDto);
     Boolean existsByCpf(String cpf);
 
 }
