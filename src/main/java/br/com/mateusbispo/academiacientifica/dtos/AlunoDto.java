@@ -3,15 +3,19 @@ package br.com.mateusbispo.academiacientifica.dtos;
 import br.com.mateusbispo.academiacientifica.models.Curso;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.hateoas.RepresentationModel;
+import com.github.dozermapper.core.Mapping;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
 public class AlunoDto extends RepresentationModel<AlunoDto> implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
     @JsonProperty("id")
+    @Mapping("id")
     private UUID key;
     private String nome;
     private List<Curso> cursos;

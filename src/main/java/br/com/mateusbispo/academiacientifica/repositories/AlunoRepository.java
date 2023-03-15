@@ -10,5 +10,4 @@ import java.util.UUID;
 public interface AlunoRepository extends JpaRepository<Aluno, UUID> {
 
     boolean existsByCpf(String cpf);
-
 }
