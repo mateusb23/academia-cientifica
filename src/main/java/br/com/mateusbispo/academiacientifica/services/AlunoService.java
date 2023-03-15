@@ -23,6 +23,7 @@ public class AlunoService implements AlunoServiceContract {
     @Autowired
     AlunoRepository alunoRepository;
 
+    @Override
     public List<AlunoDto> findAll() {
 
         logger.info("Finding all students!");
@@ -34,15 +35,6 @@ public class AlunoService implements AlunoServiceContract {
     }
 
     @Override
-    public AlunoDto saveAluno(AlunoDto alunoDto) {
-        return null;
-    }
-
-    @Override
-    public List<AlunoDto> findAll(AlunoDto alunoDto) {
-        return null;
-    }
-
     public Optional<AlunoDto> findById(UUID id) {
 
         logger.info("Finding one student!");
@@ -53,6 +45,11 @@ public class AlunoService implements AlunoServiceContract {
         dto.add(linkTo(methodOn(AlunoController.class).findById(id)).withSelfRel());
 
         return Optional.of(dto);
+    }
+
+    @Override
+    public AlunoDto saveAluno(AlunoDto alunoDto) {
+        return null;
     }
 
     @Override

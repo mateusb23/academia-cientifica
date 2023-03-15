@@ -10,7 +10,7 @@ import java.util.UUID;
 public interface AlunoServiceContract {
 
     AlunoDto saveAluno(AlunoDto alunoDto);
-    List<AlunoDto> findAll(AlunoDto alunoDto);
+    List<AlunoDto> findAll();
     Optional<AlunoDto> findById(UUID id);
     void delete(AlunoDto alunoDto);
     Boolean existsByCpf(String cpf);
